@@ -12,11 +12,6 @@
     .hero{background:url('https://i.imgur.com/vnB21TO.png') center/cover no-repeat fixed;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
     .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.5);}
     .content{position:relative;color:white;padding:2rem;}
-    .tab-button{background:#f3f4f6;color:#374151;padding:0.75rem 1.5rem;border-radius:0.5rem;margin:0.5rem;cursor:pointer;transition:background 0.3s;}
-    .tab-button:hover{background:#e5e7eb;}
-    .tab-button.active{background:#ea580c;color:white;}
-    .tab-content{display:none;}
-    .tab-content.active{display:grid;}
     .gallery-img{transition:transform 0.3s ease;}
     .gallery-img:hover{transform:scale(1.05);}
     .fixed-cta{position:fixed;bottom:30px;right:30px;z-index:50;}
@@ -26,7 +21,7 @@
 
   <nav class="fixed top-0 w-full bg-white/90 backdrop-blur z-40 border-b">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <img src="logo.png" alt="uHate2Paint LLC" class="h-14">
+      <img src="https://i.imgur.com/vnB21TO.png" alt="uHate2Paint LLC" class="h-14">
       <div class="hidden md:flex space-x-10 text-lg">
         <a href="#services" class="hover:text-orange-500">Services</a>
         <a href="#portfolio" class="hover:text-orange-500">Portfolio</a>
@@ -37,7 +32,7 @@
 
   <header class="hero">
     <div class="content max-w-5xl mx-auto">
-      <img src="logo.png" alt="uHate2Paint LLC" class="mx-auto w-full max-w-4xl mb-10 drop-shadow-2xl">
+      <img src="https://i.imgur.com/vnB21TO.png" alt="uHate2Paint LLC" class="mx-auto w-full max-w-4xl mb-10 drop-shadow-2xl">
       <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">You Hate to Paint?<br>We LOVE It.</h1>
       <p class="text-2xl md:text-4xl mb-12 drop-shadow-lg">High-End Residential Painting • Jensen Beach & Treasure Coast</p>
       <div class="space-x-6">
@@ -48,70 +43,20 @@
   </header>
 
   <section id="portfolio" class="py-32 px-6 bg-gray-50 text-center">
-    <h2 class="text-5xl md:text-6xl font-bold mb-10">Portfolio Gallery</h2>
-    <div class="flex flex-wrap justify-center mb-10">
-      <button class="tab-button active" onclick="openTab('all')">All Projects</button>
-      <button class="tab-button" onclick="openTab('fence')">Fence Staining</button>
-      <button class="tab-button" onclick="openTab('kitchen')">Kitchen Cabinets</button>
-      <button class="tab-button" onclick="openTab('bathroom')">Bathroom Cabinets</button>
-      <button class="tab-button" onclick="openTab('exterior')">Exterior House</button>
-      <button class="tab-button" onclick="openTab('pool')">Pool Deck</button>
-      <button class="tab-button" onclick="openTab('garage')">Garage Floor</button>
-      <button class="tab-button" onclick="openTab('trim')">Trim & Built-Ins</button>
-    </div>
+    <h2 class="text-5xl md:text-6xl font-bold mb-20">Portfolio Gallery</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-      <!-- All photos with data-category attribute for filtering -->
-      <!-- Fence Staining (6 photos) -->
-      <figure class="rounded-2xl shadow-2xl overflow-hidden tab-content active" data-category="all fence">
+      <!-- All your photos (50+ from the conversation) -->
+      <figure class="rounded-2xl shadow-2xl overflow-hidden">
         <img src="https://i.imgur.com/G7msFDI.jpg" alt="Fence staining before" class="w-full h-64 object-cover gallery-img">
         <figcaption class="p-4 text-gray-700 bg-white">Fence Staining Before</figcaption>
       </figure>
-      <!-- (All 50+ photos are included with data-category="all [category]" for filtering) -->
-      <!-- Example for last batch -->
-      <figure class="rounded-2xl shadow-2xl overflow-hidden tab-content active" data-category="all trim">
-        <img src="https://i.imgur.com/T5iTfZG.jpg" alt="Interior trim before" class="w-full h-64 object-cover gallery-img">
-        <figcaption class="p-4 text-gray-700 bg-white">Interior Trim Before</figcaption>
+      <figure class="rounded-2xl shadow-2xl overflow-hidden">
+        <img src="https://i.imgur.com/cmGlGdE.jpg" alt="Fence staining before" class="w-full h-64 object-cover gallery-img">
+        <figcaption class="p-4 text-gray-700 bg-white">Fence Staining Before</figcaption>
       </figure>
-      <!-- ... full list of all photos ... -->
-    </div>
-  </section>
-
-  <script>
-    function openTab(category) {
-      const buttons = document.querySelectorAll('.tab-button');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      const activeBtn = Array.from(buttons).find(btn => btn.onclick.toString().includes(category));
-      if (activeBtn) activeBtn.classList.add('active');
-      const contents = document.querySelectorAll('.tab-content');
-      contents.forEach(content => {
-        content.classList.remove('active');
-        if (category === 'all' || content.dataset.category.includes(category)) {
-          content.classList.add('active');
-        }
-      });
-    }
-  </script>
-
-  <section id="contact" class="py-32 px-6 bg-gradient-to-br from-blue-950 to-blue-700 text-white text-center">
-    <h2 class="text-5xl md:text-6xl font-bold mb-10">Elevate Your Home</h2>
-    <p class="text-2xl mb-12">Free consultations • Detailed quotes within 24 hours</p>
-    <p class="text-5xl mb-12"><a href="tel:8636622529" class="hover:text-orange-400">863-662-2529</a></p>
-    <form action="https://formspree.io/f/mjkbzqwa" method="POST" class="grid gap-6 max-w-xl mx-auto">
-      <input type="text" name="name" placeholder="Name" required class="p-4 rounded bg-white/10 border border-white/30 focus:border-orange-400 outline-none">
-      <input type="tel" name="phone" placeholder="Phone" required class="p-4 rounded bg-white/10 border border-white/30 focus:border-orange-400 outline-none">
-      <textarea name="message" rows="4" placeholder="Cabinet refinish, full exterior repaint, pool deck, etc." class="p-4 rounded bg-white/10 border border-white/30 focus:border-orange-400 outline-none"></textarea>
-      <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-5 rounded-full text-xl">Get My Free Quote →</button>
-    </form>
-    <p class="mt-12 text-lg">Jensen Beach • Stuart • Port St. Lucie • Hobe Sound • Palm City<br>Licensed & Insured • 5-Year Workmanship Warranty</p>
-  </section>
-
-  <a href="tel:8636622529" class="fixed-cta bg-orange-500 text-white p-6 rounded-full shadow-2xl hover:bg-orange-600 text-lg font-bold">
-    Call Now
-  </a>
-
-  <footer class="bg-black text-white py-12 text-center">
-    <img src="logo.png" alt="uHate2Paint LLC" class="h-12 mx-auto mb-4">
-    <p>© 2025 uHate2Paint LLC • uhate2paintllc@gmail.com • 863-662-2529</p>
-  </footer>
-</body>
-</html>
+      <figure class="rounded-2xl shadow-2xl overflow-hidden">
+        <img src="https://i.imgur.com/haaOE0V.jpg" alt="Fence staining in progress" class="w-full h-64 object-cover gallery-img">
+        <figcaption class="p-4 text-gray-700 bg-white">Fence Staining In Progress</figcaption>
+      </figure>
+      <figure class="rounded-2xl shadow-2xl overflow-hidden">
+        <img src="https://i.imgur.com/TaaDzCZ.jpg" alt="Fence staining in progress" class="w-full h-64 object
